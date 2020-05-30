@@ -1,6 +1,7 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -13,26 +14,24 @@ Plugin 'VundleVim/Vundle.vim'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
-"Plugin 'tpope/vim-fugitive'
+"Plugin 'dracula/vim'
+Plugin 'klen/python-mode'
+Plugin 'Chiel92/vim-autoformat'
+Plugin 'tpope/vim-fugitive'
+Plugin 'jedi-vim'
+Plugin 'blueshirts/darcula'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 " Git plugin not hosted on GitHub
-"Plugin 'git://git.wincent.com/command-t.git'
 " git repos on your local machine (i.e. when working on your own plugin)
-"Plugin 'file:///home/gmarik/path/to/plugin'
 " The sparkup vim script is in a subdirectory of this repo called vim.
 " Pass the path to set the runtimepath properly.
-"Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Install L9 and avoid a Naming conflict if you've already installed a
 " different version somewhere else.
 " Plugin 'ascenator/L9', {'name': 'newL9'}
-Plugin 'scrooloose/nerdtree'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'blueshirts/darcula'
-Plugin 'scrooloose/syntastic'
-"Plugin 'davidhalter/jedi-vim'
-Plugin 'valloric/youcompleteme'
-Plugin 'klen/python-mode'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -49,5 +48,28 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 syntax enable
 colorscheme darcula
-let g:ycm_server_python_interpreter = '/usr/bin/python3'
+"NerdTree
+map <C-n> :NERDTree<CR>
+"Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_python_checkers=['flake8']
+
+"autoformat"
+noremap <F1> :Autoformat<CR>
+
+"jedi-vim"
+"python-mode"
+let g:pymode_lint_on_fly = 0
+let g:jedi#force_py_version=3
+"map jj to esc"
+imap jj <Esc>
+"powerline
+set rtp+=/usr/local/lib/python3.8/site-packages/powerline/bindings/vim
+set laststatus=2
+set t_Co=256
 
