@@ -22,6 +22,7 @@ Plugin 'jedi-vim'
 Plugin 'blueshirts/darcula'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
+Plugin 'valloric/youcompleteme'
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 " Git plugin not hosted on GitHub
