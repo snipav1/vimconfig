@@ -1,9 +1,8 @@
 set nocompatible
+set relativenumber
 filetype off
-" Vundle
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" Let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'klen/python-mode'
 Plugin 'Chiel92/vim-autoformat'
@@ -13,31 +12,42 @@ Plugin 'blueshirts/darcula'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'valloric/youcompleteme'
-" All of your Plugins must be added before the following line
+Plugin 'tpope/vim-surround'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'kien/ctrlp.vim'
 call vundle#end()
 filetype plugin indent on
-" Plugins
-Syntax enable
+syntax enable
 colorscheme darcula
-" NerdTree
+imap jj <Esc>
+let mapleader = " "
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set rnu nu
+" NERDTree
 map <C-n> :NERDTree<CR>
-" Syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+" Syntastic
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_loc_list_height=3
 let g:syntastic_python_checkers=['flake8']
+map <F2> :<SyntasticCheck flake8 pylint<CR>
 " Autoformat
 noremap <F1> :Autoformat<CR>
-" Jedi-vim
-" Python-mode
+au BufWrite * :Autoformat
+" Python-Mode
 let g:pymode_lint_on_fly = 0
+" Jedi Vim
+let g:jedi#goto_command = "<leader>d"
 let g:jedi#force_py_version=3
-" Map jj to esc
-imap jj <Esc>
 " Powerline
 set rtp+=/usr/local/lib/python3.8/site-packages/powerline/bindings/vim
 set laststatus=2
 set t_Co=256
+
