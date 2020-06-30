@@ -7,8 +7,8 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'klen/python-mode'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'tpope/vim-fugitive'
-Plugin 'jedi-vim'
 Plugin 'blueshirts/darcula'
+Plugin 'davidhalter/jedi-vim'
 Plugin 'ThePrimeagen/vim-be-good'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
@@ -17,13 +17,14 @@ Plugin 'tpope/vim-surround'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'kien/ctrlp.vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'morhetz/gruvbox'
 call vundle#end()
 filetype plugin indent on
 syntax enable
-colorscheme darcula
+colorscheme gruvbox
+set background=dark
 imap jj <Esc>
-"nmap <C-[> {<CR>
-"nmap <C-]> }<CR>
 let mapleader = " "
 set tabstop=4
 set softtabstop=4
