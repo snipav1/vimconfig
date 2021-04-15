@@ -54,3 +54,5 @@ let g:jedi#force_py_version=3
 set rtp+=/usr/local/lib/python3.8/site-packages/powerline/bindings/vim
 set laststatus=2
 set t_Co=256
+" UTC-8 Support
+set encoding=utf-8
